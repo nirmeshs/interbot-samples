@@ -82,7 +82,6 @@ module.exports = class InterBot {
                             var options = { method: 'POST',
                               url: 'https://ibc.interbot.cc/ibc/bot/' + this._botConfig.interbotBotName + '/sendmsg',
                               headers: {
-                                'content-type': 'application/json',
                                 'apikey': this._botConfig.interbotApiKey
                               },
                               body: {
@@ -92,8 +91,7 @@ module.exports = class InterBot {
                             };
 
                             request(options, function (error, response, body) {
-                              if (error) throw new Error(error);
-
+                              console.log(error);
                               console.log(body);
                             });
 
