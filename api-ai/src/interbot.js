@@ -50,7 +50,7 @@ module.exports = class InterBot {
 
         if (req.query && req.query.senderobj && req.query.messageobj) {
             let messageobj = JSON.parse(req.query.messageobj);
-            let senderobj = JSON.parser(req.query.senderobj);
+            let senderobj = JSON.parse(req.query.senderobj);
             let chatId = senderobj.channelid;
             let messageText = messageobj.text;
 
