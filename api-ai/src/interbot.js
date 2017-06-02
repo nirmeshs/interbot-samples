@@ -85,7 +85,7 @@ module.exports = class InterBot {
                                 'content-type': 'application/json',
                                 'apikey': this._botConfig.interbotApiKey
                               },
-                              body: { recipient: { id: req.body.From },
+                              body: {
                                 message: responseText,
                                 destbotname: chatId 
                               }
