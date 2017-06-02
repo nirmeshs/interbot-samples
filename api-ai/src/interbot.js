@@ -48,9 +48,11 @@ module.exports = class InterBot {
             console.log("body", req.body);
         }
 
-        if (req.body && req.body.From && req.body.Body) {
-            let chatId = req.body.From;
-            let messageText = req.body.Body;
+        if (req.body && req.body.senderobj && req.body.messageobj) {
+            let messageobj = JSON.parse(req.body.messageobj);
+            let senderobj = JSON.parser(req.body.senderobj);
+            let chatId = senderobj.channelid;
+            let messageText = messageobj.text;
 
             console.log(chatId, messageText);
             
@@ -78,15 +80,16 @@ module.exports = class InterBot {
                             var request = require("request");
 
                             var options = { method: 'POST',
-                              url: 'http://botplatform.gupshup.io/botplatformadaptor/v1/bot/sendMessage',
-                              headers: 
-                               { 'content-type': 'application/json' },
-                              body: 
-                               { recipient: { id: req.body.From },
-                                 text: responseText,
-                                 apikey: this._botConfig.interbotApiKey,
-                                 from: { name: this._botConfig.interbotBotName } },
-                              json: true };
+                              url: 'https://ibc.interbot.cc/ibc/bot/' + this._botConfig.interbotBotName + '/sendmsg',
+                              headers: {
+                                'content-type': 'application/json',
+                                'apikey': this._botConfig.interbotApiKey
+                              },
+                              body: { recipient: { id: req.body.From },
+                                message: responseText,
+                                destbotname: chatId 
+                              }
+                            };
 
                             request(options, function (error, response, body) {
                               if (error) throw new Error(error);
