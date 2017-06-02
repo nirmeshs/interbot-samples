@@ -48,9 +48,9 @@ module.exports = class InterBot {
             console.log("body", req.body);
         }
 
-        if (req.body && req.body.senderobj && req.body.messageobj) {
-            let messageobj = JSON.parse(req.body.messageobj);
-            let senderobj = JSON.parser(req.body.senderobj);
+        if (req.query && req.query.senderobj && req.query.messageobj) {
+            let messageobj = JSON.parse(req.query.messageobj);
+            let senderobj = JSON.parser(req.query.senderobj);
             let chatId = senderobj.channelid;
             let messageText = messageobj.text;
 
@@ -65,7 +65,7 @@ module.exports = class InterBot {
                     {
                         sessionId: this._sessionIds.get(chatId),
                         originalRequest: {
-                            data: req.body,
+                            data: "somebody",
                             source: "interbot"
                         }
                     });

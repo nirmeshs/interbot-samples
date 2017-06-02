@@ -25,7 +25,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.post('/sms', (req, res) => {
+app.get('/interbot', (req, res) => {
 
     console.log('POST sms received');
 
