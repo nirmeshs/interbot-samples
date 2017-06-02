@@ -82,9 +82,10 @@ module.exports = class InterBot {
                             var options = { method: 'POST',
                               url: 'https://ibc.interbot.cc/ibc/bot/' + this._botConfig.interbotBotName + '/sendmsg',
                               headers: {
+                                'content-type': 'application/x-www-form-urlencoded',
                                 'apikey': this._botConfig.interbotApiKey
                               },
-                              body: {
+                              form: {
                                 message: responseText,
                                 destbotname: chatId 
                               }
