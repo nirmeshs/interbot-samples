@@ -1,0 +1,15 @@
+{
+  "name": "basic-interbot",
+  "version": "1.0.0",
+  "description": "Sample code for interbot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "interbot",
+    "node"
+  ],
+  "author": "Nirmesh Mehta",
+  "license": "ISC"
+}
