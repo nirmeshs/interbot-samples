@@ -1,0 +1,19 @@
+{
+  "name": "aws-lex",
+  "version": "1.0.0",
+  "description": "Sample bot for aws lex",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "interbot",
+    "aws",
+    "lex"
+  ],
+  "author": "Nirmesh Mehta",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.63.0"
+  }
+}
