@@ -1,6 +1,5 @@
 var AWS = require('aws-sdk')
 var http = require('http');
-var query = require('url');
 var url = require('url');
 
 var name = 'node-hello-world';

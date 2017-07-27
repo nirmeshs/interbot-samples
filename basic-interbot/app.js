@@ -1,9 +1,9 @@
-const http = require('http');
+var http = require('http');
 
-const name = 'node-hello-world';
-const port = '5000';
+var name = 'node-hello-world';
+var port = '5000';
 
-const app = new http.Server();
+var app = new http.Server();
 
 app.on('request', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
